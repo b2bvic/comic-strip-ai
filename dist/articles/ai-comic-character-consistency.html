@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How to Maintain Character Consistency Across AI Comic Panels | Comic Strip AI</title>
+    <meta name="description" content="AI image generators forget your characters between prompts. Learn seed anchoring, LoRA training, weighted parameters, and reference workflows that force Midjourney, DALL-E 3, and Stable Diffusion to maintain visual continuity across comic panels." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="How to Maintain Character Consistency Across AI Comic Panels" />
+    <meta property="og:description" content="AI image generators forget your characters between prompts. Learn seed anchoring, LoRA training, weighted parameters, and reference workflows that force Midjourney, DALL-E 3, and Stable Diffusion to maintain visual continuity across comic panels." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://comicstripai.com/articles/ai-comic-character-consistency.html" />
+    <meta property="og:site_name" content="Comic Strip AI" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Maintain Character Consistency Across AI Comic Panels" />
+    <meta name="twitter:description" content="AI image generators forget your characters between prompts. Learn seed anchoring, LoRA training, weighted parameters, and reference workflows that force Midjourney, DALL-E 3, and Stable Diffusion to maintain visual continuity across comic panels." />
+    <link rel="canonical" href="https://comicstripai.com/articles/ai-comic-character-consistency.html" />
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              emerald: {
+                50: '#ecfdf5', 100: '#d1fae5', 200: '#a7f3d0', 300: '#6ee7b7',
+                400: '#34d399', 500: '#10b981', 600: '#059669', 700: '#047857',
+                800: '#065f46', 900: '#064e3b', 950: '#022c22'
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Maintain Character Consistency Across AI Comic Panels",
+  "description": "AI image generators forget your characters between prompts. Learn seed anchoring, LoRA training, weighted parameters, and reference workflows that force Midjourney, DALL-E 3, and Stable Diffusion to maintain visual continuity across comic panels.",
+  "author": {
+    "@type": "Person",
+    "name": "Victor Valentine Romo",
+    "url": "https://victorvalentineromo.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Comic Strip AI",
+    "url": "https://comicstripai.com"
+  },
+  "datePublished": "2026-01-19",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://comicstripai.com/articles/ai-comic-character-consistency.html"
+  }
+}
+    </script>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+
+    <!-- Nav -->
+    <nav class="border-b border-gray-200 bg-white">
+        <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="/" class="text-xl font-bold text-amber-600 hover:text-amber-700 transition-colors">Comic Strip AI</a>
+            <div class="flex gap-6 text-sm font-medium text-gray-600">
+                <a href="/articles.html" class="hover:text-amber-600 transition-colors">Articles</a>
+                <a href="/#about" class="hover:text-amber-600 transition-colors">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <main class="max-w-4xl mx-auto px-6 py-12">
+        <article class="prose prose-lg prose-gray max-w-none prose-headings:text-gray-900 prose-h1:text-3xl prose-h1:font-bold prose-h2:text-2xl prose-h2:font-semibold prose-h2:mt-12 prose-h2:mb-4 prose-h3:text-xl prose-h3:font-medium prose-h3:mt-8 prose-h3:mb-3 prose-a:text-amber-600 prose-a:no-underline hover:prose-a:underline prose-strong:text-gray-900 prose-blockquote:border-amber-500 prose-blockquote:bg-amber-50 prose-blockquote:py-1 prose-blockquote:px-4 prose-blockquote:rounded-r-lg">
+            <h1>How to Maintain Character Consistency Across AI Comic Panels</h1>
+<p>Your protagonist looked perfect in Panel 1. Strong jawline, determined eyes, that signature scar across the left cheek. You hit regenerate for Panel 2.</p>
+<p>Different face. Softer features. No scar.</p>
+<p>Panel 3. Worse. The costume changed colors. By Panel 5 you&#39;re rage-clicking through forty variations trying to get the same person twice.</p>
+<p>This happens because <strong>Midjourney</strong>, <strong>DALL-E 3</strong>, and <strong>Stable Diffusion</strong> are stateless systems. They process each prompt in isolation. No memory of what came before. No awareness of what comes next. Every generation starts from zero.</p>
+<p>Character consistency in AI comics is an engineering problem, not a creative one. The tools exist. The techniques work. Most tutorials skip them because they&#39;re less glamorous than showing off a single beautiful panel.</p>
+<h2>Why AI Image Generators Fail at Character Consistency</h2>
+<p>Understanding the failure mode makes the solutions obvious.</p>
+<h3>The Stateless Problem: How Midjourney Forgets Context</h3>
+<p><strong>Midjourney</strong> operates on a request-response model. You send a prompt. The model interprets it through billions of training parameters. It generates an image. Then it forgets everything.</p>
+<p>There is no &quot;character memory&quot; layer. No database tracking that your protagonist has brown hair and a blue jacket. Each prompt gets processed by the same weights with no persistent state between calls.</p>
+<p>When you prompt for &quot;Jake standing in a coffee shop&quot; and then &quot;Jake running through rain,&quot; the model treats these as completely unrelated requests. The word &quot;Jake&quot; has no special meaning. It&#39;s just another token feeding into the diffusion process alongside &quot;coffee shop&quot; and &quot;rain.&quot;</p>
+<p>The model doesn&#39;t know Jake exists. It generates a plausible human matching the contextual cues in your prompt. Different context, different human.</p>
+<p>Traditional animation studios solve this with model sheets and character bibles—documents that specify exact proportions, color codes, and distinguishing marks. The animator references these materials when drawing each frame. AI models have no equivalent internal reference system. You have to engineer that consistency externally through prompt structure, reference images, or model fine-tuning.</p>
+<h3>Training Data Limitations and Visual Drift</h3>
+<p><strong>Stable Diffusion</strong> and other open models compound this problem through training data distribution.</p>
+<p>Most training images show individuals once. A photograph captures one moment. The model learns to generate realistic humans, not to track persistent identities across multiple frames.</p>
+<p>Comic-style training data does exist, but it&#39;s fragmented across millions of art styles, character designs, and visual languages. The model has no mechanism to know that your request belongs to a specific ongoing visual narrative rather than an isolated illustration.</p>
+<p>Visual drift happens because the model samples from a probability distribution. Each generation pulls slightly different features from the latent space. Brown hair in one image might trend auburn in the next. Facial proportions shift because the model is optimizing for &quot;realistic face&quot; rather than &quot;this specific face.&quot;</p>
+<h3>Seed Numbers vs. Character Memory</h3>
+<p>Seeds control the random noise pattern that starts the diffusion process. Using the same seed with the same prompt produces identical output.</p>
+<p>This creates a false sense of control.</p>
+<p>The seed locks the starting noise, not the character identity. Change one word in your prompt—even something unrelated to the character like background description—and the entire output shifts. The seed doesn&#39;t preserve character features across prompt variations. It preserves the mathematical starting point for a specific text-image pair.</p>
+<p><strong>Midjourney&#39;s</strong> <code>--seed</code> parameter is useful for regenerating variations of a single image. It fails as a character consistency mechanism because comic panels require different prompts for different scenes.</p>
+<h2>LoRA Training for Recurring Comic Characters</h2>
+<p><strong>LoRA</strong> (Low-Rank Adaptation) training teaches the model what your specific character looks like. Instead of hoping the model generates consistent features from text descriptions, you fine-tune the weights to recognize a new concept: your character.</p>
+<p>This is the most reliable consistency method for <strong>Stable Diffusion</strong> workflows.</p>
+<h3>Building a Character Training Dataset (20-40 Images)</h3>
+<p>Quality matters more than quantity. Twenty well-curated images outperform a hundred inconsistent ones.</p>
+<p><strong>What to include:</strong></p>
+<ul>
+<li>Multiple angles: front, three-quarter, profile, back</li>
+<li>Multiple expressions: neutral, happy, angry, surprised, focused</li>
+<li>Multiple lighting conditions: daylight, indoor, dramatic shadows</li>
+<li>Costume variations if relevant: civilian clothes, uniform, battle gear</li>
+<li>Full body and close-up shots</li>
+</ul>
+<p><strong>What to exclude:</strong></p>
+<ul>
+<li>Images where the character is occluded or partially visible</li>
+<li>Extreme perspectives that distort proportions</li>
+<li>Low-resolution or heavily compressed source material</li>
+<li>Other characters in frame competing for attention</li>
+</ul>
+<p>If you&#39;re creating an original character, generate the training dataset first using your preferred tool. Spend time on this phase. Curate aggressively. Reject images with any visual inconsistency you don&#39;t want baked into the model.</p>
+<p>Name your images descriptively: <code>jake_front_neutral.png</code>, <code>jake_side_angry.png</code>. This helps during training parameter selection.</p>
+<h3>Stable Diffusion LoRA Workflow with Kohya_ss</h3>
+<p><strong>Kohya_ss</strong> is the standard tool for LoRA training on consumer hardware. The workflow requires setup but produces reliable results.</p>
+<p><strong>Environment setup:</strong></p>
+<ol>
+<li>Install <strong>Python 3.10</strong> with pip</li>
+<li>Clone the <strong>Kohya_ss</strong> repository</li>
+<li>Run the installation script for your operating system</li>
+<li>Launch the GUI with <code>./gui.sh</code> (Linux/Mac) or <code>gui-user.bat</code> (Windows)</li>
+</ol>
+<p><strong>Training configuration:</strong></p>
+<p>Navigate to the LoRA training tab. Set your image folder path and output directory.</p>
+<p>The configuration screen presents dozens of parameters. Focus on these:</p>
+<ul>
+<li><strong>Network Rank (dim):</strong> 32-64 for characters. Higher captures more detail, increases file size.</li>
+<li><strong>Network Alpha:</strong> Set equal to or half of rank. Controls learning rate scaling.</li>
+<li><strong>Learning Rate:</strong> 1e-4 for initial training. Reduce to 5e-5 if you see overfitting.</li>
+<li><strong>Epochs:</strong> 10-20 for most character LoRAs. More isn&#39;t better—watch for quality degradation.</li>
+<li><strong>Batch Size:</strong> 1-2 depending on VRAM. Higher values smooth training but require more memory.</li>
+</ul>
+<p><strong>Caption files:</strong></p>
+<p>Each training image needs a corresponding <code>.txt</code> file with the same filename. Contents describe what&#39;s in the image using natural language.</p>
+<p>Example for <code>jake_front_neutral.png</code>:</p>
+<pre><code>jake, male, brown hair, blue eyes, scar on left cheek, leather jacket, white shirt, jeans, standing, neutral expression, front view
+</code></pre>
+<p>Include your character&#39;s trigger word (<code>jake</code>) in every caption. The model learns to associate this token with the visual features across your training set.</p>
+<h3>Fine-Tuning Parameters: Steps, Learning Rate, Batch Size</h3>
+<p>Training steps equal: (number of images) × (epochs) / (batch size)</p>
+<p>For a 30-image dataset at 15 epochs with batch size 1: 450 steps total.</p>
+<p><strong>Learning rate schedules:</strong></p>
+<p>Constant rate works for small datasets. Cosine annealing helps prevent overfitting on longer training runs. The scheduler reduces learning rate as training progresses, allowing fine-grained adjustments in later epochs.</p>
+<p><strong>Early stopping indicators:</strong></p>
+<ul>
+<li>Generated images match training data too closely: overfitting</li>
+<li>Generated images lose detail or become muddy: underfitting or learning rate too high</li>
+<li>Character features appear in unrelated prompts: trigger word contamination</li>
+</ul>
+<p>Test your LoRA at multiple checkpoint saves. Epoch 10 might capture the character better than epoch 15 if the later epochs started overfitting.</p>
+<h2>Prompt Engineering Techniques for Midjourney Character Continuity</h2>
+<p>Not everyone wants to train custom models. <strong>Midjourney</strong> users need different approaches.</p>
+<h3>Using --seed and --sref for Visual Anchoring</h3>
+<p><strong>Midjourney V6</strong> introduced <code>--sref</code> (style reference) which partially addresses consistency.</p>
+<p>The workflow:</p>
+<ol>
+<li>Generate your ideal character image</li>
+<li>Note the seed number from the job</li>
+<li>Use <code>--sref [image URL]</code> in subsequent prompts pointing to that image</li>
+<li>Combine with <code>--seed [number]</code> from the original generation</li>
+</ol>
+<p>This anchors style elements but doesn&#39;t guarantee character identity. The reference image influences color palette, rendering style, and general aesthetic. Facial features and specific details still drift.</p>
+<p><strong>Style weight parameter:</strong> <code>--sw 100</code> (default) controls how strongly the reference influences output. Increase to 150-200 for tighter consistency. Decrease for looser interpretation.</p>
+<h3>Character Reference Sheets: The Control Image Method</h3>
+<p>Professional animators use character sheets—documents showing the same character from multiple angles with consistent design notes.</p>
+<p>Create one for your AI workflow:</p>
+<ol>
+<li>Generate a front-facing character portrait you&#39;re satisfied with</li>
+<li>Use that image as reference (<code>--sref</code>) to generate side and three-quarter views</li>
+<li>Assemble these into a single reference sheet image</li>
+<li>Upload the sheet and reference it in all future prompts</li>
+</ol>
+<p><strong>Prompt structure with reference:</strong></p>
+<pre><code>[character description], [scene/action], [style notes] --sref [sheet URL] --sw 150 --ar 2:3
+</code></pre>
+<p>The multi-angle sheet gives the model more visual information than a single portrait. Consistency improves because the reference contains multiple views of the same character design.</p>
+<h3>Weighted Prompt Structures for Costume and Facial Features</h3>
+<p><strong>Midjourney</strong> supports prompt weighting with <code>::</code> notation. Higher weights increase emphasis on specific elements.</p>
+<p>Example without weighting:</p>
+<pre><code>Jake, brown hair, scar on cheek, blue leather jacket, standing in rain
+</code></pre>
+<p>Example with strategic weighting:</p>
+<pre><code>Jake, brown hair::1.5, scar on left cheek::2, blue leather jacket::1.5, standing in rain
+</code></pre>
+<p>Facial features that define character identity get higher weights. Scene elements that vary between panels get lower or default weights.</p>
+<p><strong>Warning:</strong> Aggressive weighting (above 2) can distort output. The model over-emphasizes the weighted element at the expense of image coherence. Test incrementally.</p>
+<h2>Comparative Analysis: ChatGPT DALL-E 3 vs Midjourney for Comics</h2>
+<p>Different tools suit different workflows. Selection depends on your consistency requirements, volume needs, and technical comfort.</p>
+<h3>DALL-E&#39;s Edit Mode for Panel-to-Panel Consistency</h3>
+<p><strong>DALL-E 3</strong> through <strong>ChatGPT</strong> offers a significant advantage: conversational context.</p>
+<p>When you describe a character in one message, the model retains that description for subsequent requests in the same conversation. You can say &quot;generate Jake in a coffee shop&quot; and then &quot;now show Jake running&quot; without re-describing Jake&#39;s appearance.</p>
+<p><strong>Edit mode</strong> extends this further. You can:</p>
+<ol>
+<li>Generate an initial image</li>
+<li>Request edits to specific regions while preserving others</li>
+<li>Maintain character features while changing pose, expression, or background</li>
+</ol>
+<p>This isn&#39;t perfect consistency—drift still occurs across many generations—but it reduces the cold-start problem of stateless systems.</p>
+<p>The conversational memory also allows iterative refinement. If Panel 2&#39;s Jake looks off, you can reference Panel 1 in your next prompt: &quot;Make his jaw more angular like the first image&quot; or &quot;Match the hair style from the coffee shop scene.&quot; The model processes these comparative instructions better than starting cold each time.</p>
+<p><strong>Practical workflow for DALL-E comics:</strong></p>
+<p>Start each session by describing your character in detail before generating any images. Include physical features, costume elements, and distinguishing marks. Then request panels sequentially within the same conversation thread. When consistency drifts noticeably, paste your original character description again as a reset.</p>
+<p><strong>Limitations:</strong></p>
+<ul>
+<li><strong>OpenAI</strong> restricts certain content types more aggressively than other platforms</li>
+<li>Output resolution caps at 1024x1024 without external upscaling</li>
+<li>API access requires paid tier; <strong>ChatGPT Plus</strong> limits generation volume</li>
+<li>Less stylistic control compared to <strong>Midjourney</strong> or fine-tuned <strong>Stable Diffusion</strong></li>
+<li>Conversation context has token limits; very long sessions may lose early character descriptions</li>
+</ul>
+<h3>When to Use Replicate API for Batch Processing</h3>
+<p><strong>Replicate</strong> hosts dozens of <strong>Stable Diffusion</strong> variants including custom LoRAs. API access enables programmatic generation.</p>
+<p>Use cases for comic workflows:</p>
+<ul>
+<li>Generating multiple panel variations from a single script</li>
+<li>A/B testing different prompt structures at scale</li>
+<li>Automated pipelines that take script input and output panel images</li>
+</ul>
+<p><strong>Python example for batch generation:</strong></p>
+<pre><code class="language-python">import replicate
+
+character_scenes = [
+    &quot;jake standing in doorway, morning light&quot;,
+    &quot;jake walking down street, afternoon sun&quot;,
+    &quot;jake sitting at desk, lamp light&quot;
+]
+
+for scene in character_scenes:
+    output = replicate.run(
+        &quot;your-lora-model&quot;,
+        input={
+            &quot;prompt&quot;: f&quot;{scene}, comic style, detailed illustration&quot;,
+            &quot;negative_prompt&quot;: &quot;blurry, distorted, extra limbs&quot;
+        }
+    )
+</code></pre>
+<p>Cost scales with volume. Single images cost fractions of a cent. Batch processing thousands of panels accumulates.</p>
+<h3>Cost-Benefit Analysis: Time vs. Output Quality</h3>
+<table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>Setup Time</th>
+<th>Per-Panel Time</th>
+<th>Consistency</th>
+<th>Cost Structure</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Midjourney</strong> manual</td>
+<td>0 hours</td>
+<td>15-30 min</td>
+<td>Low-Medium</td>
+<td>$10-60/month</td>
+</tr>
+<tr>
+<td><strong>Midjourney</strong> + reference sheets</td>
+<td>2-4 hours</td>
+<td>10-20 min</td>
+<td>Medium</td>
+<td>$10-60/month</td>
+</tr>
+<tr>
+<td><strong>DALL-E 3</strong> conversation</td>
+<td>0 hours</td>
+<td>5-15 min</td>
+<td>Medium</td>
+<td>$20/month (Plus)</td>
+</tr>
+<tr>
+<td><strong>Stable Diffusion</strong> + LoRA</td>
+<td>8-20 hours</td>
+<td>5-10 min</td>
+<td>High</td>
+<td>GPU costs or free</td>
+</tr>
+<tr>
+<td><strong>Replicate</strong> API + LoRA</td>
+<td>10-25 hours</td>
+<td>1-3 min</td>
+<td>High</td>
+<td>Pay per generation</td>
+</tr>
+</tbody></table>
+<p>LoRA training has the highest upfront cost in time. It produces the best ongoing consistency. The breakeven depends on your production volume.</p>
+<p>For a 4-panel weekly strip, <strong>DALL-E 3</strong> or <strong>Midjourney</strong> reference sheets probably suffice. For a 50+ page graphic novel, LoRA training pays dividends within the first chapter.</p>
+<h2>Workflow Integration: From Script to Consistent Character Panels</h2>
+<p>Consistency techniques only matter if they fit into a repeatable production process.</p>
+<h3>Storyboarding Character Appearances and Costume Changes</h3>
+<p>Before generating panels, document character state per scene.</p>
+<p>A simple tracking table:</p>
+<table>
+<thead>
+<tr>
+<th>Panel</th>
+<th>Character</th>
+<th>Costume</th>
+<th>Expression</th>
+<th>Special Features</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>Jake</td>
+<td>Leather jacket</td>
+<td>Neutral</td>
+<td>Scar visible</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Jake</td>
+<td>Leather jacket</td>
+<td>Surprised</td>
+<td>Scar hidden (angle)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Jake</td>
+<td>No jacket (removed)</td>
+<td>Angry</td>
+<td>Scar visible</td>
+</tr>
+</tbody></table>
+<p>This prevents accidental costume continuity errors—the jacket appearing in Panel 4 after Jake removed it in Panel 3.</p>
+<p>For longer stories, track costume changes across scenes. Note what characters are wearing at each story beat so you don&#39;t generate inconsistent wardrobes.</p>
+<h3>Version Control for Character Prompts (Git for Creatives)</h3>
+<p>Your prompts are intellectual property and production assets. Treat them accordingly.</p>
+<p><strong>Git</strong> tracks changes to text files. Create a repository for your comic project containing:</p>
+<ul>
+<li><code>characters/</code> — Character description files with trigger words, weighted attributes, reference image URLs</li>
+<li><code>scripts/</code> — Scene-by-scene dialogue and action</li>
+<li><code>prompts/</code> — The actual generation prompts used for each panel</li>
+<li><code>outputs/</code> — Generated images (use <strong>Git LFS</strong> for large files)</li>
+</ul>
+<p>Benefits:</p>
+<ul>
+<li>Roll back to previous prompt versions if quality degrades</li>
+<li>Track which prompt structures produced best results</li>
+<li>Collaborate with other creators while maintaining consistency</li>
+<li>Audit trail for legal/copyright documentation</li>
+</ul>
+<p><strong>Commit messages should be descriptive:</strong></p>
+<pre><code>feat: added rain shader keywords to jake outdoor scenes
+fix: reduced scar weight from 2.5 to 1.8, was causing face distortion
+</code></pre>
+<p>Even if you never collaborate, version control prevents the common failure mode of overwriting a working prompt with an experimental change that breaks everything. You can branch experimental prompt variations, test them, and merge only what improves output quality.</p>
+<p>For creators without technical backgrounds, <strong>GitHub Desktop</strong> provides a visual interface. Create a repository, drag files in, click commit. The learning curve is an afternoon. The long-term benefit is never losing a prompt structure that works.</p>
+<h3>Quality Assurance Checklist Before Panel Assembly</h3>
+<p>Before accepting a generated panel into your comic:</p>
+<p><strong>Character verification:</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> Face matches reference (check against character sheet)</li>
+<li><input disabled="" type="checkbox"> Hair color and style correct</li>
+<li><input disabled="" type="checkbox"> Costume matches scene requirements</li>
+<li><input disabled="" type="checkbox"> Distinguishing features present (scars, tattoos, accessories)</li>
+<li><input disabled="" type="checkbox"> Body proportions consistent with previous panels</li>
+</ul>
+<p><strong>Technical verification:</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> Resolution meets platform requirements</li>
+<li><input disabled="" type="checkbox"> No obvious AI artifacts (extra fingers, distorted text, floating objects)</li>
+<li><input disabled="" type="checkbox"> Composition supports narrative flow (correct eye direction, action framing)</li>
+<li><input disabled="" type="checkbox"> Lighting consistent with scene description</li>
+</ul>
+<p><strong>Continuity verification:</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> Character position makes sense following previous panel</li>
+<li><input disabled="" type="checkbox"> Background elements match established setting</li>
+<li><input disabled="" type="checkbox"> Time of day consistent within scene</li>
+<li><input disabled="" type="checkbox"> Costume state matches (jackets on/off, weapons drawn/holstered)</li>
+</ul>
+<p>Reject panels that fail critical criteria. Regenerate or edit as needed. Accepting inconsistent panels trains your eye to accept lower quality over time.</p>
+<hr>
+<p>Character consistency separates readable multi-episode webcomics from one-off AI art showcases. The techniques compound—a well-trained LoRA combined with structured prompting and rigorous QA produces output that looks intentionally designed rather than randomly generated.</p>
+<p>The initial investment is real. Hours spent on training data curation, prompt refinement, and workflow documentation don&#39;t produce immediate visual results.</p>
+<p>The payoff comes at Episode 20, when your character looks the same as Episode 1, and readers follow the story instead of squinting at faces wondering if that&#39;s the same person.</p>
+<p>[INTERNAL: AI comic panel composition] — Once characters stay consistent, composition determines whether panels engage or bore readers.</p>
+<p>[INTERNAL: AI comic workflow architecture] — Full production pipeline from script to published strip, including the tools and automation that scale these techniques.</p>
+<p>[INTERNAL: Midjourney vs DALL-E vs Stable Diffusion] — Detailed comparison of when each tool fits specific comic creation scenarios.</p>
+
+        </article>
+
+        <div class="mt-16 pt-8 border-t border-gray-200">
+            <a href="/articles.html" class="text-amber-600 hover:text-amber-700 font-medium">&larr; All Articles</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-200 bg-gray-50 mt-16">
+        <div class="max-w-4xl mx-auto px-6 py-8 text-center text-sm text-gray-500">
+            &copy; 2026 Comic Strip AI. A <a href="https://scalewithsearch.com" class="text-amber-600 hover:underline">Scale With Search</a> property.
+        </div>
+    </footer>
+
+</body>
+</html>
