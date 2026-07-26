@@ -343,9 +343,3 @@ Composition transforms technically consistent AI output into readable sequential
 Start with traditional principles. The **Rule of Thirds**, leading lines, and negative space apply regardless of generation method. Then learn the vocabulary that AI models actually parse—camera angle terms, depth specifications, aspect ratio implications.
 
 The goal isn't generating impressive single images. It's generating sequences where each panel serves narrative function and guides readers through your story.
-
-[INTERNAL: AI comic character consistency] — Composition means nothing if readers can't recognize your protagonist from panel to panel.
-
-[INTERNAL: Manga style AI comics] — Genre-specific composition rules for Japanese-influenced sequential art, including right-to-left reading flow considerations.
-
-[INTERNAL: AI comic copyright and legal] — Style mimicry carries legal implications when recreating recognizable aesthetics from published artists.

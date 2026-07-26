@@ -336,9 +336,3 @@ What you can control: tool licenses you accept, platforms you publish on, disclo
 The cautious creator treats every generation as legally ambiguous until human creative input establishes clear ownership. Document your process. Disclose your methods. Build audience relationships based on transparency rather than concealment.
 
 Legal clarity will come eventually. Until then, informed caution beats hopeful assumptions.
-
-[INTERNAL: AI comic character consistency] — LoRA training has licensing implications when using community-trained models versus training your own.
-
-[INTERNAL: AI comic workflow architecture] — Documentation practices that establish human creative input for copyright purposes.
-
-[INTERNAL: Monetizing AI comics] — Commercial use strategies that align with platform and tool licensing requirements.

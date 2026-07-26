@@ -436,7 +436,3 @@ Editorial cartooning demands more than visual skill. The format requires politic
 The practical path forward: Use AI for symbolic backgrounds, metaphorical imagery, and stylistic exploration. Handle specific likenesses through other means until platform restrictions and consistency improve. Keep output in clearly stylized formats that signal satirical intent.
 
 The best editorial cartoons distill complex positions into instant recognition. That distillation happens in your head before it happens in the prompt. AI makes the rendering faster. It doesn't make the thinking faster.
-
-[INTERNAL: AI comic copyright] — Defamation, satire protection, and platform liability for political content.
-
-[INTERNAL: AI comic panel composition] — Visual metaphor construction and camera angle psychology.

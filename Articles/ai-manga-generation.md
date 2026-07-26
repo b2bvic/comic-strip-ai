@@ -439,9 +439,3 @@ The models best suited for this work—**NovelAI**, anime-tuned **Stable Diffusi
 Cultural accuracy matters if you want Japanese readers to take your work seriously. Research replaces assumptions. Sensitivity readers catch errors AI can't detect. The visual medium carries cultural context that surface-level prompting misses.
 
 The format rewards creators who treat manga as a discipline rather than an aesthetic.
-
-[INTERNAL: AI comic character consistency] — LoRA training and reference workflows apply directly to recurring manga characters.
-
-[INTERNAL: AI comic panel composition] — Camera angles and visual flow principles with manga-specific applications.
-
-[INTERNAL: AI comic workflow architecture] — Full pipeline including manga-specific tools like Clip Studio Paint.

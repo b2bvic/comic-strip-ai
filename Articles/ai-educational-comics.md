@@ -207,7 +207,6 @@ Feature discovery through narrative avoids the feature-dump problem. As the char
 
 AI generation can produce character illustrations while software screenshots remain captured from actual interfaces. The hybrid approach maintains interface accuracy while adding narrative and character elements that pure screenshot tutorials lack.
 
-[INTERNAL: AI comic workflow] — Batch processing techniques enable rapid production of software training comics when interface elements remain consistent across panels.
 
 ## Distribution and Adoption Strategies
 
@@ -233,7 +232,6 @@ Creative Commons licenses provide established frameworks. CC BY allows any use w
 
 OER repositories increase discoverability. **OER Commons**, **Merlot**, **OpenStax** partner resources, and institutional repositories expose content to educators actively seeking materials. Listing in multiple repositories multiplies visibility.
 
-[INTERNAL: AI comic copyright] — OER licensing intersects with AI-generation copyright questions. Understand ownership implications before licensing AI-generated educational content.
 
 Quality assurance builds OER credibility. Peer review, editorial standards, and revision history demonstrate that freely available doesn't mean carelessly produced. OER with visible quality processes compete effectively against commercial alternatives.
 
@@ -262,5 +260,3 @@ The pedagogical fundamentals didn't shift. Dual coding still describes how human
 The opportunity is precise: apply established educational design principles using new production tools. Comics that would have cost $50,000 and six months now cost $500 and six weeks. The speed enables iteration. The cost reduction enables experimentation. The visual format enables learning that text alone cannot match.
 
 The trap is equally precise: generating attractive images that don't actually teach. AI produces compelling visuals effortlessly. Educational effectiveness requires the same careful design it always required. The tools changed. The work didn't.
-
-[INTERNAL: AI comic workflow] — Bulk production workflows apply to educational comics when generating series content around consistent characters and settings.

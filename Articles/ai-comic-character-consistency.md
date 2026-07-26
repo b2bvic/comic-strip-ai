@@ -350,9 +350,3 @@ Character consistency separates readable multi-episode webcomics from one-off AI
 The initial investment is real. Hours spent on training data curation, prompt refinement, and workflow documentation don't produce immediate visual results.
 
 The payoff comes at Episode 20, when your character looks the same as Episode 1, and readers follow the story instead of squinting at faces wondering if that's the same person.
-
-[INTERNAL: AI comic panel composition] — Once characters stay consistent, composition determines whether panels engage or bore readers.
-
-[INTERNAL: AI comic workflow architecture] — Full production pipeline from script to published strip, including the tools and automation that scale these techniques.
-
-[INTERNAL: Midjourney vs DALL-E vs Stable Diffusion] — Detailed comparison of when each tool fits specific comic creation scenarios.

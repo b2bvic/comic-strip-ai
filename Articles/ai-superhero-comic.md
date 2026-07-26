@@ -461,11 +461,3 @@ The technical challenge is manageable. LoRAs handle character consistency. Contr
 The creative challenge is larger: building characters worth following across issues. The visual craft serves the story. A perfectly rendered hero in a boring narrative wastes the technique.
 
 Build the characters first. Document their powers, their symbols, their costumes, their relationships. Then engineer the prompts to visualize what you've already designed.
-
-[INTERNAL: AI comic character consistency] — Maintaining your hero's face across panels uses the same techniques as any character work.
-
-[INTERNAL: AI comic panel composition] — Action sequences require understanding how panels guide reader eye movement.
-
-[INTERNAL: AI comic copyright] — Detailed legal framework for commercial AI superhero comics.
-
-[INTERNAL: AI comic workflow] — Team character management at scale needs structured production systems.

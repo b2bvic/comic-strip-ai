@@ -313,9 +313,3 @@ Budget items beyond subscriptions:
 The best AI tool for comics is the one that lets you ship comics. **Midjourney** if aesthetic quality matters most. **DALL-E 3** if iteration speed matters most. **Stable Diffusion** if control and scale matter most.
 
 Pick one. Learn it well enough to produce consistently. The tool matters less than the workflow you build around it.
-
-[INTERNAL: AI comic character consistency] — Detailed consistency techniques for whichever tool you select.
-
-[INTERNAL: AI comic workflow] — Production pipeline integration across tools.
-
-[INTERNAL: Monetizing AI comics] — ROI calculations for commercial production.

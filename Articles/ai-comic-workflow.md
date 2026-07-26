@@ -521,11 +521,3 @@ Workflow architecture transforms AI comic creation from unsustainable hobby into
 Episode 50 should feel easier than Episode 5. Characters load from reference libraries. Prompts pull from tested templates. Assembly follows documented procedures. Publishing happens through automated pipelines. Analytics inform next episode planning.
 
 The creative work—story, character, emotion, humor—deserves your full attention. Systems handle everything else.
-
-[INTERNAL: AI comic character consistency] — Workflow depends on consistency techniques to avoid regeneration waste.
-
-[INTERNAL: AI comic panel composition] — Pre-production storyboards specify composition requirements covered in detail here.
-
-[INTERNAL: AI comic copyright and legal] — Platform compliance documentation fits within the publishing workflow phase.
-
-[INTERNAL: AI superhero comics] — Genre-specific workflow variations for action-heavy illustration styles.
